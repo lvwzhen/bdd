@@ -13,7 +13,7 @@ body {
 a {
   color: #333;
   &:hover {
-    color: #56B5E9;
+    color: #56b5e9;
   }
 }
 
@@ -53,7 +53,7 @@ a {
     &:hover {
       svg {
         path {
-          fill: #56B5E9;
+          fill: #56b5e9;
         }
       }
     }
@@ -90,15 +90,20 @@ a {
   .preview-content {
     position: relative;
     .text {
+      box-sizing: border-box;
+      overflow: hidden;
       position: absolute;
-      bottom: 5%;
-      left: 0;
-      right: 0;
+      bottom: 0;
+      padding-top: 2.5%;
+      padding-bottom: 2.5%;
+      max-height: 100%;
+      left: 2%;
+      right: 2%;
       text-align: center;
-      font-size: 60px;
+      font-size: 50px;
       color: #fff;
       -webkit-text-stroke-width: 2px;
-            -webkit-text-stroke-color: black;
+      -webkit-text-stroke-color: black;
       font-weight: bold;
       text-shadow: 2px 2px 10px #000;
     }
@@ -142,7 +147,7 @@ a {
     justify-content: space-between;
     align-items: center;
     background-color: #e5e5e5;
-  
+
     textarea {
       padding: 5px;
       border: 2px solid #e5e5e5;
@@ -157,7 +162,7 @@ a {
       input {
         display: none;
       }
-      label{
+      label {
         width: 30px;
         height: 30px;
         display: block;
@@ -166,10 +171,10 @@ a {
         margin: 0 10px;
         cursor: pointer;
       }
-      .color01{
+      .color01 {
         background-color: #000;
       }
-      .color02{
+      .color02 {
         background-color: #fff;
       }
       input:checked + label {
@@ -369,7 +374,7 @@ a {
   }
   input:checked + label {
     background-color: #fdece8;
-    border: 2px solid #56B5E9;
+    border: 2px solid #56b5e9;
   }
   span {
     display: block;
@@ -426,7 +431,7 @@ a {
   display: inline-block;
   text-align: center;
   line-height: 50px;
-  background-color: #56B5E9;
+  background-color: #56b5e9;
   color: #fff;
   font-weight: bold;
   border: 0;
@@ -455,7 +460,7 @@ a {
     -webkit-appearance: none;
     color: #666;
     cursor: pointer;
-    &:hover{
+    &:hover {
       color: #333;
     }
     b {
@@ -595,7 +600,7 @@ a {
     color: #999;
     cursor: pointer;
     &:hover {
-      color: #56B5E9;
+      color: #56b5e9;
     }
   }
 }
