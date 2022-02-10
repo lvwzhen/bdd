@@ -85,6 +85,7 @@ a {
   img {
     width: 100%;
     height: auto;
+    display: block;
   }
   .preview-content {
     position: relative;
@@ -95,9 +96,11 @@ a {
       right: 0;
       text-align: center;
       font-size: 60px;
-      color: #000;
+      color: #fff;
+      -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
       font-weight: bold;
-      text-shadow: 2px 2px 10px white;
+      text-shadow: 2px 2px 10px #000;
     }
   }
 }
@@ -125,6 +128,7 @@ a {
     img {
       width: 60px;
       height: 60px;
+      display: block;
     }
   }
   .tool-footer {

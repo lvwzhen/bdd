@@ -32,7 +32,7 @@
     <div class="bdd-maker">
       <div class="maker-preview">
         <div id="avatarmaker" class="preview-content">
-          <img src="../assets/img/1.jpg" alt="" />
+          <img :src="img" alt="" />
           <div class="text">{{ text }}</div>
         </div>
       </div>
@@ -40,188 +40,16 @@
       <div class="maker-tool">
         <div class="hot-list">
           <ul>
-
-            <li v-for="">
+            <li v-for="(item, index) in list" :key="item.img">
               <input
                 type="radio"
                 name="avatarMaskStyle"
-                id="mask01"
+                :id="'mask' + index"
                 v-on:change="changeStyle"
-                checked
+                :title="index"
               />
-              <label for="mask01">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-
-
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask02"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask02">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask01"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask01">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask02"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask02">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask01"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask01">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask02"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask02">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask01"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask01">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask02"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask02">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask01"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask01">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask02"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask02">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask01"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask01">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask02"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask02">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask01"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask01">
-                <img src="../assets/img/1.jpg" alt="" />
-              </label>
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="avatarMaskStyle"
-                id="mask02"
-                :title="1"
-                v-on:change="changeStyle"
-                checked
-              />
-              <label for="mask02">
-                <img src="../assets/img/1.jpg" alt="" />
+              <label :for="'mask' + index">
+                <img :src="item.img" alt="" />
               </label>
             </li>
           </ul>
@@ -236,7 +64,6 @@
               rows="2"
               placeholder="请输入"
               v-model="text"
-              
             ></textarea>
           </div>
           <div class="colors">
@@ -327,46 +154,33 @@ export default {
   },
   data() {
     return {
-      text: "你好呀",
-      width: 0,
-      height: 0,
-      top: 0,
-      left: 0,
-      showText: true,
-      showImage: false,
-      avatarImg: null,
-      avatarMask: 1,
-      scale: 1,
+      text: "第一张",
+      img: require("../assets/img/1.jpg"),
       avatarmakerImg: null,
       tipsDialog: false,
       output: null,
-      logoFont: "Quicksand",
       msg: "冰墩墩表情生成器：https://hu.lvwzhen.com/",
-      fonts: [
-        "Quicksand",
-        "Roboto",
-        "Dela Gothic One",
-        "Lato",
-        "Zilla Slab Highlight",
-        "Oswald",
-        "Lora",
-        "Inter",
-        "Noto Sans SC",
-        "Noto Serif SC",
+      list: [
+        {
+          img: require("../assets/img/1.jpg"),
+          text: "第一张",
+        },
+        {
+          img: require("../assets/img/2.jpg"),
+          text: "第二张",
+        },
+        {
+          img: require("../assets/img/3.jpg"),
+          text: "第三张",
+        },
+        {
+          img: require("../assets/img/4.jpg"),
+          text: "第4张",
+        },
       ],
-      avatarMaskStyle: 0,
-      avatarmakerText: "MI",
-      avatarmakerDialog: false,
-      avatarmakerLogo: "",
       previewImage: null,
       Mobile: false,
       disabled: false,
-      hue: 50,
-      color: "",
-      logoBgColor: "",
-      message: "https://avatarmaker.lvwzhen.com/",
-      avatarmakerUrl:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKuSURBVHgB7dMBDQAgDMCwg3/PcBtLWg89bw2QdAfIEhjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGMIEhTGAIExjCBIYwgSFMYAgTGMIEhjCBIUxgCBMYwgSGsA/MRAXc/BABqAAAAABJRU5ErkJggg==",
     };
   },
   methods: {
@@ -418,7 +232,9 @@ export default {
       this.avatarImg = null;
     },
     changeStyle(e) {
-      this.avatarMask = e.target.title;
+      console.log(e.target.title);
+      this.text = this.list[e.target.title].text;
+      this.img = this.list[e.target.title].img;
     },
     isMobile() {
       let flag = navigator.userAgent.match(
