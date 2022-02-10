@@ -40,24 +40,215 @@
       <div class="maker-tool">
         <div class="hot-list">
           <ul>
+
+            <li v-for="">
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask01"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask01">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+
+
             <li>
-              <a href=""><img src="../assets/img/1.jpg" alt="" /></a>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask02"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask02">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
             </li>
             <li>
-              <a href=""><img src="../assets/img/1.jpg" alt="" /></a>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask01"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask01">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask02"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask02">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask01"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask01">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask02"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask02">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask01"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask01">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask02"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask02">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask01"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask01">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask02"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask02">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask01"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask01">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask02"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask02">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask01"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask01">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="avatarMaskStyle"
+                id="mask02"
+                :title="1"
+                v-on:change="changeStyle"
+                checked
+              />
+              <label for="mask02">
+                <img src="../assets/img/1.jpg" alt="" />
+              </label>
             </li>
           </ul>
         </div>
 
         <div class="text-editor">
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="2"
-            placeholder="请输入"
-            v-model="text"
-          ></textarea>
+          <div class="text">
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="2"
+              placeholder="请输入"
+              v-model="text"
+              
+            ></textarea>
+          </div>
+          <div class="colors">
+            <div class="color-item">
+              <input type="radio" name="textColor" id="color01" checked />
+              <label for="color01" class="color01"></label>
+            </div>
+            <div class="color-item">
+              <input type="radio" name="textColor" id="color02" />
+              <label for="color02" class="color02"></label>
+            </div>
+          </div>
         </div>
 
         <div class="tool-footer">
