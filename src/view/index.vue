@@ -47,6 +47,8 @@
                 :id="'mask' + index"
                 v-on:change="changeStyle"
                 :title="index"
+                v-model="hot"
+                :value="index"
               />
               <label :for="'mask' + index">
                 <img :src="item.img" alt="" />
@@ -130,8 +132,8 @@
       <p>免责声明：本网站所有表情均来自网络，如有侵权，请联系我们删除。</p>
       <ul>
         <li><a @click="showTips">隐私说明</a></li>
-        <li><a href="/lvwzhen.png">联系作者</a></li>
-        <li><a href="https://support.qq.com/products/380382">意见反馈</a></li>
+        <li><a target="_blank" href="https://weibo.com/u/1712429634">联系作者</a></li>
+        <li><a target="_blank" href="https://support.qq.com/products/380382">意见反馈</a></li>
       </ul>
     </div>
 
@@ -181,41 +183,42 @@ export default {
   },
   data() {
     return {
+      hot:0,
       textColor: "color01",
-      text: "第一张",
+      text: "吃了吗 您呐😊",
       img: require("../assets/img/1.jpg"),
       avatarmakerImg: null,
       tipsDialog: false,
       output: null,
-      msg: "冰墩墩表情生成器：https://hu.lvwzhen.com/",
+      msg: "冰墩墩表情生成器：https://bdd2022.com/",
       list: [
         {
           img: require("../assets/img/1.jpg"),
-          text: "第一张",
+          text: "吃了吗 您呐😊",
         },
         {
           img: require("../assets/img/2.jpg"),
-          text: "第二张",
+          text: "溜了溜了",
         },
         {
           img: require("../assets/img/3.jpg"),
-          text: "第三张",
+          text: "🚗 滴滴 快上车",
         },
         {
           img: require("../assets/img/4.jpg"),
-          text: "第4张",
+          text: "别逼我动手",
         },
         {
           img: require("../assets/img/5.jpg"),
-          text: "第一张",
+          text: "来咯来咯 我来咯",
         },
         {
           img: require("../assets/img/6.jpg"),
-          text: "第二张",
+          text: "反了你 😠",
         },
         {
           img: require("../assets/img/7.jpg"),
-          text: "第三张",
+          text: "你瞅啥？",
         },
         {
           img: require("../assets/img/8.jpg"),
@@ -223,13 +226,35 @@ export default {
         },
         {
           img: require("../assets/img/9.jpg"),
-          text: "第三张",
+          text: "火速赶往现场",
         },
         {
           img: require("../assets/img/10.jpg"),
-          text: "第4张",
+          text: "躺赢",
         },
+        {
+          img: require("../assets/img/11.jpg"),
+          text: "匍匐前进",
+        },
+        {
+          img: require("../assets/img/12.jpg"),
+          text: "不许动 举起手来",
+        },
+        {
+          img: require("../assets/img/13.jpg"),
+          text: "自由飞翔",
+        },
+        {
+          img: require("../assets/img/14.jpg"),
+          text: "你是要上天呀",
+        },
+        {
+          img: require("../assets/img/15.jpg"),
+          text: "走你",
+        }
       ],
+      avatarmakerDialog: false,
+      disable: false,
       previewImage: null,
       Mobile: false,
       disabled: false,
@@ -387,7 +412,7 @@ export default {
       };
       domtoimage.toPng(node, param).then(function () {
         domtoimage.toPng(node, param).then(function (dataUrl1) {
-          that.downloadImage(dataUrl1, "avatar.png");
+          that.downloadImage(dataUrl1, "bdd.png");
         });
       });
     },
@@ -406,9 +431,6 @@ export default {
   },
 };
 </script>
-<style>
-@import "~@radial-color-picker/vue-color-picker/dist/vue-color-picker.min.css";
-</style>
 <style>
 .van-uploader__preview-image {
   width: 216px;
