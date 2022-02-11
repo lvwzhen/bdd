@@ -131,8 +131,9 @@
     <div class="footer">
       <p>免责声明：本网站所有表情均来自网络，如有侵权，请联系我们删除。</p>
       <ul>
-        <li><a @click="showTips">隐私说明</a></li>
+        <li><a target="_blank" href="https://hu.lvwzhen.com/">虎年头像生成器</a></li>
         <li><a target="_blank" href="https://weibo.com/u/1712429634">联系作者</a></li>
+        <li><a @click="showTips">隐私说明</a></li>
         <li><a target="_blank" href="https://support.qq.com/products/380382">意见反馈</a></li>
       </ul>
     </div>
