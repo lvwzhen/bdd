@@ -131,7 +131,7 @@
       <ul>
         <li><a @click="showTips">隐私说明</a></li>
         <li><a href="/lvwzhen.png">联系作者</a></li>
-        <li><a href="https://support.qq.com/products/378327?">意见反馈</a></li>
+        <li><a href="https://support.qq.com/products/380382">意见反馈</a></li>
       </ul>
     </div>
 
