@@ -33,7 +33,7 @@
       <div class="maker-preview">
         <div id="avatarmaker" class="preview-content">
           <img :src="img" alt="" />
-          <div class="text">{{ text }}</div>
+          <div class="text" v-html="parsedBody" :class="textColor"></div>
         </div>
       </div>
 
@@ -68,12 +68,38 @@
           </div>
           <div class="colors">
             <div class="color-item">
-              <input type="radio" name="textColor" id="color01" checked />
-              <label for="color01" class="color01"></label>
+              <input type="radio" name="textColor" v-model="textColor" value="color01" id="color01" checked />
+              <label for="color01" class="color01">
+                <svg
+                  class="icon"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                >
+                  <path
+                    d="M389.7 604.3 198.2 447.4c-3.7-3-9.1-3-12.8.1l-73.3 61.4c-4.4 3.7-4.8 10.3-.9 14.5l324.1 344.3c5 5.3 13.8 3.6 16.6-3.1 64.4-160.1 244.3-452.8 463.2-664.7 3-2.9 3.9-7.2 2.3-11l-13.7-33c-2.4-5.8-9.5-8-14.7-4.5-243.2 157.7-419.4 353.5-499.3 452.9z"
+                    fill="#fff"
+                  />
+                </svg>
+              </label>
             </div>
             <div class="color-item">
-              <input type="radio" name="textColor" id="color02" />
-              <label for="color02" class="color02"></label>
+              <input type="radio" name="textColor" v-model="textColor" value="color02" id="color02" />
+              <label for="color02" class="color02">
+                <svg
+                  class="icon"
+                  viewBox="0 0 1024 1024"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                >
+                  <path
+                    d="M389.7 604.3 198.2 447.4c-3.7-3-9.1-3-12.8.1l-73.3 61.4c-4.4 3.7-4.8 10.3-.9 14.5l324.1 344.3c5 5.3 13.8 3.6 16.6-3.1 64.4-160.1 244.3-452.8 463.2-664.7 3-2.9 3.9-7.2 2.3-11l-13.7-33c-2.4-5.8-9.5-8-14.7-4.5-243.2 157.7-419.4 353.5-499.3 452.9z"
+                    fill="#000"
+                  />
+                </svg>
+              </label>
             </div>
           </div>
         </div>
@@ -101,6 +127,7 @@
     </div>
 
     <div class="footer">
+      <p>免责声明：本网站所有表情均来自网络，如有侵权，请联系我们删除。</p>
       <ul>
         <li><a @click="showTips">隐私说明</a></li>
         <li><a href="/lvwzhen.png">联系作者</a></li>
@@ -154,6 +181,7 @@ export default {
   },
   data() {
     return {
+      textColor: "color01",
       text: "第一张",
       img: require("../assets/img/1.jpg"),
       avatarmakerImg: null,
@@ -175,6 +203,30 @@ export default {
         },
         {
           img: require("../assets/img/4.jpg"),
+          text: "第4张",
+        },
+        {
+          img: require("../assets/img/5.jpg"),
+          text: "第一张",
+        },
+        {
+          img: require("../assets/img/6.jpg"),
+          text: "第二张",
+        },
+        {
+          img: require("../assets/img/7.jpg"),
+          text: "第三张",
+        },
+        {
+          img: require("../assets/img/8.jpg"),
+          text: "来自大佬的凝视😎",
+        },
+        {
+          img: require("../assets/img/9.jpg"),
+          text: "第三张",
+        },
+        {
+          img: require("../assets/img/10.jpg"),
           text: "第4张",
         },
       ],
@@ -338,6 +390,11 @@ export default {
           that.downloadImage(dataUrl1, "avatar.png");
         });
       });
+    },
+  },
+  computed: {
+    parsedBody() {
+      return this.text.replace(/\n/g, "<br>");
     },
   },
   mounted() {
