@@ -130,7 +130,7 @@
     </div>
 
     <div class="footer">
-      <p>免责声明：本网站所有表情均来自网络，如有侵权，请联系我们删除。</p>
+      <p>免责声明：本网站所有表情均来自网络，仅供学习参考，如有侵权，请联系我们删除。</p>
       <ul>
         <li><a target="_blank" href="https://hu.lvwzhen.com/">虎年头像生成器</a></li>
         <li><a target="_blank" href="https://twitter.com/lvwzhen">联系作者</a></li>
