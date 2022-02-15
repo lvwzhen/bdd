@@ -603,12 +603,24 @@ a {
     width: 50px;
     height: 50px;
   }
+  .maker-tool .hot-list{
+    overflow: hidden;
+  }
   .maker-tool .hot-list ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-left: -3px;
+    margin-right: -3px;
     li {
       margin-right: 0;
+      width: 20%;
+      padding: 0 3px;
+      box-sizing: border-box;
+      img{
+        width: 100%;
+        height: auto;
+      }
     }
   }
   .maker-tool .text-editor{
