@@ -130,12 +130,13 @@
     </div>
 
     <div class="footer">
-      <p>免责声明：本网站所有表情均来自网络，仅供学习参考，如有侵权，请联系我们删除。</p>
+      <p>免责声明：本网站所有表情均来自网络，仅供学习参考，如有侵权，请联系我们删除。
+        <br />请遵守当地法律法规，违者后果自负。</p>
       <ul>
         <li><a target="_blank" href="https://hu.lvwzhen.com/">虎年头像生成器</a></li>
-        <li><a target="_blank" href="https://twitter.com/lvwzhen">联系作者</a></li>
         <li><a @click="showTips">隐私说明</a></li>
         <li><a target="_blank" href="https://support.qq.com/products/380382">意见反馈</a></li>
+        <li><a target="_blank" href="https://twitter.com/lvwzhen">联系作者</a></li>
       </ul>
     </div>
 
@@ -161,8 +162,7 @@
     >
       <div class="content">
         「冰墩墩表情生成器」的图片生成功能仅依赖于本地浏览器，我们不会在服务器中储存或者收集用户的数据和图片。
-        <br />
-        <br />请遵守当地法律法规，违者后果自负。
+        
       </div>
     </van-dialog>
   </div>
