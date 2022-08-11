@@ -143,7 +143,11 @@
     </div>
 
     <div class="footer">
-      <div class="wx-mp"><img src="../assets/img/wx-mp.png" alt="" /></div>
+      <div class="wx-mp">
+        <a v-if="selected" :href="selected.url" target="_blank"
+          ><img :src="selected.img" alt=""
+        /></a>
+      </div>
       <p>
         免责声明：本网站所有表情均来自网络，仅供学习参考，如有侵权，请联系我们删除。
         <br />请遵守当地法律法规，违者后果自负。
@@ -279,9 +283,46 @@ export default {
       previewImage: null,
       Mobile: false,
       disabled: false,
+      projects: [
+        {
+          url: "https://mp.weixin.qq.com/s/ei9CYh6zZ5co0d6hP78RSA",
+          img: "https://cam.lvwzhen.com/project/coldplay-weekly.png",
+        },
+        {
+          url: "weixin://dl/business/?t=p0pwI8Z8ljm",
+          img: "https://cam.lvwzhen.com/project/1024.png",
+        },
+        {
+          url: "https://www.zhihu.com/column/c_1496834279112400896",
+          img: "https://cam.lvwzhen.com/project/apple-wiki.png",
+        },
+        {
+          url: "https://bdd2022.com/",
+          img: "https://cam.lvwzhen.com/project/bdd2022.png",
+        },
+        {
+          url: "https://cam.lvwzhen.com/",
+          img: "https://cam.lvwzhen.com/project/mi-cam.png",
+        },
+        {
+          url: "https://mi-logo.lvwzhen.com/",
+          img: "https://cam.lvwzhen.com/project/mi-logo.png",
+        },
+        {
+          url: "https://sharenote.app/",
+          img: "https://cam.lvwzhen.com/project/share-note.png",
+        },
+      ],
+      selected: null,
     };
   },
+  created() {
+    this.selected = this.randomProject(this.projects);
+  },
   methods: {
+    randomProject(projects) {
+      return projects[Math.floor(Math.random() * projects.length)];
+    },
     share: function () {
       this.$copyText(this.msg).then(
         function () {
